@@ -9,8 +9,8 @@ description:
   
   See README.md for more details.
 category: Language
-homepage: https://github.com/edemko/nanopass
-bug-reports: https://github.com/edemko/nanopass/issues
+homepage: https://github.com/marseillebd/nanopass
+bug-reports: https://github.com/marseillebd/nanopass/issues
 author: Marseille Bounchard
 maintainer: marseillebd@proton.me
 copyright: 2022 Marseille Bounchard
@@ -21,7 +21,7 @@ extra-doc-files: README.md, CHANGELOG.md, LICENSE
 
 source-repository head
   type: git
-  location: https://github.com/edemko/nanopass
+  location: https://github.com/marseillebd/nanopass
 
 library
   hs-source-dirs: src

@@ -29,7 +29,7 @@ import qualified Text.Pretty.Simple as PP
 -- The syntax is based on s-expressions.
 --
 -- TODO document the syntax here, or for now you can look in "Nanopass.Internal.Parser"
--- More details and examples are given in the [readme](https://github.com/edemko/nanopass/blob/master/README.md).
+-- More details and examples are given in the [readme](https://github.com/marseillebd/nanopass/blob/master/README.md).
 deflang :: QuasiQuoter
 deflang = QuasiQuoter (bad "expression") (bad "pattern") (bad "type") go
   where
@@ -84,7 +84,7 @@ deflang = QuasiQuoter (bad "expression") (bad "pattern") (bad "type") go
 -- None of the functions defined by this quasiquoter need to be expoted for Nanopass to function.
 -- I expect you will not export any of these definitions directly, but instead wrap them into a complete pass, and only export that pass.
 --
--- More details and examples are given in the [readme](https://github.com/edemko/nanopass/blob/master/README.md).
+-- More details and examples are given in the [readme](https://github.com/marseillebd/nanopass/blob/master/README.md).
 --
 -- TODO document the syntax here, but for now, see 'parsePass' for a grammar.
 defpass :: QuasiQuoter
