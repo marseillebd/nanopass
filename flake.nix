@@ -11,6 +11,12 @@
       let
         pkgs = import nixpkgs { inherit system; };
       in {
+        devShells.ghc910 = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            haskell.compiler.ghc910
+            cabal-install
+          ];
+        };
         devShells.ghc98 = pkgs.mkShell {
           buildInputs = with pkgs; [
             haskell.compiler.ghc98
