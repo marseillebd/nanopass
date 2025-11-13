@@ -1,0 +1,4 @@
+packages: nanopass.cabal
+
+allow-newer:
+  sexpr-parser:megaparsec

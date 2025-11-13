@@ -236,7 +236,7 @@ declareType x = do
     []
   where
   xlateName = TH.mkName "Xlate"
-  tvs = flip TH.PlainTV () <$> xlateParams x ++ [xlateFParam x]
+  tvs = TH.plainTV <$> xlateParams x ++ [xlateFParam x]
 
 declareTypeI :: XlateDef -> Q Dec
 declareTypeI x = do
@@ -276,7 +276,7 @@ declareTypeI x = do
     []
   where
   xlateName = TH.mkName "XlateI"
-  tvs = flip TH.PlainTV () <$> xlateParams x
+  tvs = TH.plainTV <$> xlateParams x
 
 declareXlateLifter :: XlateDef -> Q [Dec]
 declareXlateLifter x = do

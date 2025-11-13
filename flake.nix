@@ -11,11 +11,6 @@
       let
         pkgs = import nixpkgs { inherit system; };
       in {
-        # FIXME broken on ghc9.8:
-        # - sexpr-parser has an overly-restrictive upper bound on megaparsec
-        #   workaround: `cabal build --allow-newer=megaparsec
-        #   possible fix: implement my own sexpr parser, or perhaps even a fancy alex/happy parser
-        # - template haskell has changed wrt `TH.TyVarBndr`
         devShells.ghc98 = pkgs.mkShell {
           buildInputs = with pkgs; [
             haskell.compiler.ghc98

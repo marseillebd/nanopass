@@ -76,7 +76,7 @@ defineLang l = do
   -- define a type with one nullary ctor for every grammatical type
   langInfo <- defineLangHeader l
   -- define every nonterminal type
-  params <- gets langTyvars <&> \tvs -> tvs <&> \tv -> TH.PlainTV tv ()
+  params <- gets langTyvars <&> \tvs -> TH.plainTV <$> tvs
   nontermTypeDecs <- forM (Map.elems l.langInfo.nonterms) $ \nonterm -> do
     M.lift $ TH.addModFinalizer $ TH.putDoc (TH.DeclDoc nonterm.nontermName.th) $
       "This type is a non-terminal of the t'" ++ fromUpName l.langName.name ++ "' language."
