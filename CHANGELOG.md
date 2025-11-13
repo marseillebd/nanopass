@@ -1,6 +1,11 @@
 # Revision history for nanopass
 
-## 0.0.3.0 -- YYYY-mm-dd
+## 0.0.3.1 -- 2025-11-12
+
+* updated dependency version bounds; now compiles on ghc 9.2 through 9.12
+* I am likely to drop support on ghc versions <9.6
+
+## 0.0.3.0 -- 2024-01-08
 
 * Stop generating records for each production.
   (This would create partial fields which were a rich source of bugs for clients.)
