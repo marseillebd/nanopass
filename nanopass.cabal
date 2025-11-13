@@ -25,8 +25,8 @@ source-repository head
 
 common deps
   build-depends:
-    , base >=4.11.1 && <4.21
-    , template-haskell >=2.18 && <2.23
+    , base >=4.11.1 && <4.22
+    , template-haskell >=2.18 && <2.24
 
 library
   import: deps
