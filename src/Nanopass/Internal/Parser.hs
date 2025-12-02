@@ -56,7 +56,7 @@ import qualified Text.Megaparsec.Char.Lexer as P
 ------------------------------
 
 type ParseResult = Either
-  (Language 'Unvalidated UpName)  -- ^ base language defintion
+  (Language 'Unvalidated UpName)  -- ^ base language definition
   LangMod -- ^ modifications to a language
 
 -- | @
@@ -393,8 +393,8 @@ toUpColonName = toUpDotName . map (\c -> if c == ':' then '.' else c)
 
 -- | @
 -- Pass
---   ::= (\'from\' \<UpColonCase\>    source lagnuage name
---        \'to\' \<UpColonCase\>      target lagnuage name
+--   ::= (\'from\' \<UpColonCase\>    source language name
+--        \'to\' \<UpColonCase\>      target language name
 --          \<string…\>               documentation
 -- @
 --

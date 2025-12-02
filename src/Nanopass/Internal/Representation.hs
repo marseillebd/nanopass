@@ -1,4 +1,4 @@
-{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE DataKinds #-} -- DEBUG
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE StandaloneDeriving #-}
@@ -14,7 +14,7 @@ module Nanopass.Internal.Representation
   , Nonterm(..)
   , Production(..)
   , TypeDesc(..)
-  -- * Types for Modifying Manguages
+  -- * Types for Modifying Languages
   , LangMod(..)
   , NontermsEdit(..)
   , ProductionsEdit(..)
@@ -146,7 +146,7 @@ data Language v n = Language
   deriving(Show)
 
 -- | Seen as a Haskell entity, each 'Language' is a set of mutually-recursive types.
--- Seen from the persepctive of a CFG, each of these types is a non-terminal used to define the abstract grammar of a language.
+-- Seen from the perspective of a CFG, each of these types is a non-terminal used to define the abstract grammar of a language.
 --
 -- See 'Language' for attributing a name to a set of these types.
 data LanguageInfo v = LanguageInfo

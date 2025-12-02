@@ -49,7 +49,7 @@ deflang = QuasiQuoter (bad "expression") (bad "pattern") (bad "type") go
   bad ctx _ = fail $ "`deflang` quasiquoter cannot be used in " ++ ctx ++ " context,\n\
                      \it can only appear as part of declarations."
 
--- | Define automatic translation between two langauges.
+-- | Define automatic translation between two languages.
 -- This creates an @Xlate@ type and the @descend\<Syntactic Category\>@ family of functions,
 --   as well as pure variants (@XlateI@ and @descend\<Syntactic Category\>I@) and a lifting function @idXlate@.
 -- A translation function is generated for each syntactic category with the same name in both source and target languages.

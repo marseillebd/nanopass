@@ -133,7 +133,7 @@ extendProductions :: Set UpName -- ^ known non-terminals for the new language
                   -> Either Error (Map UpName (Production 'Valid))
 extendProductions nts tvs orig mods = do
   let (additions, deletions) = partitionProductionsEdits mods
-  -- NOTE this forM_ is over-restricive because I don't have a way to modify/outright replace productions
+  -- NOTE this forM_ is over-restrictive because I don't have a way to modify/outright replace productions
   -- forM_ additions $ \add -> case add.prodName.name `elem` deletions of
   --   True -> Left $ IllegalProductionAddedAlsoDeleted add.prodName.name
   --   _ -> pure ()

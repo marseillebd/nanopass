@@ -104,14 +104,14 @@ defineLangHeader l = do
     , case (l.langInfo.baseDefdLang, l.langInfo.originalProgram) of
       (Just baseLang, Just origProg) -> unlines
         [ ""
-        , "This language was generated based on the langauge t'" ++ show baseLang.langName.th ++ "'"
+        , "This language was generated based on the language t'" ++ show baseLang.langName.th ++ "'"
         , "using the following 'Language.Nanopass.deflang' program:"
         , ""
         , unlines . fmap ("> " ++) . lines $ origProg
         ]
       (Just baseLang, Nothing) -> unlines
         [ ""
-        , "This language was generated based on the langauge t'" ++ show baseLang.langName.th ++ "'."
+        , "This language was generated based on the language t'" ++ show baseLang.langName.th ++ "'."
         ]
       (Nothing, Just origProg) -> unlines
         [ ""
@@ -149,7 +149,7 @@ subtermType (VarType vName) =
   gets ((vName.th `elem`) . langTyvars) >>= \case
     True -> do
       pure $ TH.VarT vName.th
-    False -> fail $ concat ["in a nanopass language definition: unknown langauge parameter ", show vName]
+    False -> fail $ concat ["in a nanopass language definition: unknown language parameter ", show vName]
 subtermType (CtorType cName argDescs) = do
   args <- subtermType `mapM` argDescs
   pure $ foldl TH.AppT (TH.ConT cName.th) args
@@ -206,7 +206,7 @@ reifyLang lName = do
         f (Just tvs) (_, _, tvs', _)
           | tvs == (fixup <$> tvs') = pure (Just tvs)
           | otherwise = fail $ concat
-            [ "corrupt language has differing paramaters between syntactic categories. expected:\n"
+            [ "corrupt language has differing parameters between syntactic categories. expected:\n"
             , "  " ++ show tvs ++ "\n"
             , "got:\n"
             , "  " ++ show (fixup <$> tvs')
