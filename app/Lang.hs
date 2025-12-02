@@ -14,10 +14,10 @@ data Foo a b c = Foo [c]
   deriving (Show,Functor,Foldable,Traversable)
 
 [deflang|
-((L0 funny)
+((L0 ann funny)
   (Expr
     (Var String)
-    (Lam String (* Stmt))
+    (Lam ann String (* Stmt))
     (App Expr Expr)
     (Nope String)
     (UhOh (&
@@ -32,5 +32,5 @@ data Foo a b c = Foo [c]
   )
 )
 |]
-deriving stock instance (Show funny) => Show (Expr funny)
-deriving stock instance (Show funny) => Show (Stmt funny)
+deriving stock instance (Show ann, Show funny) => Show (Expr ann funny)
+deriving stock instance (Show ann, Show funny) => Show (Stmt ann funny)

@@ -267,9 +267,10 @@ reifyLang lName = do
       , Just cName <- toUpDotName (TH.nameBase thName) = do
         decodedArgs <- recurse `mapM` args
         pure $ CtorType (ValidName cName thName) decodedArgs
-    recurse (TH.VarT thName)
-      | Just tvName <- toLowName (TH.nameBase thName)
-        = pure $ VarType (ValidName tvName thName)
+    recurse (TH.VarT reifyName)
+      | thName <- fixup reifyName
+      , Just tvName <- toLowName thName
+        = pure $ VarType (ValidName tvName (TH.mkName thName))
     recurse otherType = fail $ "corrupt subterm type:\n" ++ show otherType ++ "\n in type:\n" ++ show type0
     fromTuple :: TH.Type -> Maybe [TH.Type]
     fromTuple t0 = case loop t0 of
