@@ -1,5 +1,9 @@
 # Revision history for nanopass
 
+## 0.0.3.2 -- 2025-12-02
+
+* fixed issue where passes would not compile if the target language had parameters
+
 ## 0.0.3.1 -- 2025-11-12
 
 * updated dependency version bounds; now compiles on ghc 9.2 through 9.12
