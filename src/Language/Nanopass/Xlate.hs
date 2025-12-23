@@ -448,7 +448,7 @@ idiomAppE :: Exp -> Exp -> Exp
 idiomAppE a b = TH.InfixE (Just a) (VarE '(<*>)) (Just b)
 
 bang :: TH.Bang
-bang = TH.Bang TH.NoSourceUnpackedness TH.SourceStrict
+bang = TH.Bang TH.NoSourceUnpackedness TH.NoSourceStrictness
 
 containsGrammar :: TypeDesc 'Valid -> Bool
 containsGrammar (RecursiveType _) = True

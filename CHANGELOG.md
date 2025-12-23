@@ -1,5 +1,8 @@
 # Revision history for nanopass
 
+## 0.0.3.3 -- TODO
+* fields on `Xlate{,I}` are no longer strict
+
 ## 0.0.3.2 -- 2025-12-02
 
 * fixed issue where passes would not compile if the target language had parameters
